@@ -1,0 +1,20 @@
+.section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: start;
+}
+
+.section img {
+    align-self: center;
+}
+
+.section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.section ul li a {
+    text-decoration: none;
+    color: #333333;
+}

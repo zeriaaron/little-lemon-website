@@ -1,0 +1,18 @@
+.unorderedList {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.unorderedList li a {
+    text-decoration: none;
+    color: #333333;
+}
+
+.img {
+    width: auto;
+    height: auto;
+}
+
