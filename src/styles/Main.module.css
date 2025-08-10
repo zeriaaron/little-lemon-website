@@ -11,19 +11,6 @@ clamp(min, preferred, max): can eliminate media query use
 preferred: responsive, 1.5vw -> 1.5% * eg. 1200px -> inside the min and max
 */
 
-:root {
-    --padding-left-right: 10%;
-    --button-width: 100%;
-    --button-max-width: 30rem;
-    --button-height: 100%;
-    --padding-top-bottom: 2%;
-    --margin-top-bottom: 2%;
-    --h1-h2-font-size: clamp(2rem, 1.5vw, 3rem);
-    --h3-font-size: clamp(1rem, 1.5vw, 2rem);
-    --p-h4-font-size: clamp(0.5rem, 1.5vw, 1.5rem);
-    --btn-font-size: clamp(0.8rem, 1.5vw, 1.2rem);
-}
-
 .introSection {
     background-color: #495E57;
     display: flex;
@@ -219,7 +206,6 @@ preferred: responsive, 1.5vw -> 1.5% * eg. 1200px -> inside the min and max
 }
 
 .outroSection {
-    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -324,6 +310,7 @@ xl: ≥1200px
     }
 }
 
+/* Smaller Mobiles and below */
 @media screen and (max-width: 576px) {
     .introSection > img {
         width: 250px;
