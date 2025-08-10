@@ -36,7 +36,7 @@
     background-color: #F4CE14;
     border: 0;
     border-radius: 5px;
-    box-shadow: 0 3px 5px black;
+    box-shadow: 0 2px 3px black;
     width: 15rem;
     height: 3rem;
     font-size: var(--btn-font-size);
