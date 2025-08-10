@@ -1,20 +1,16 @@
 import './App.css'
-import Header from './components/Header'
 import Home from './pages/Home'
-import Footer from './components/Footer'
+import Book from './pages/Book'
 import { Routes, Route } from 'react-router-dom'
 
 function App() {
   return (
     <>
-      <Header/>
-
       {/* Routing */}
       <Routes>
         <Route path='/' element={<Home/>}/>
+        <Route path='/book' element={<Book/>}/>
       </Routes>
-
-      <Footer/>
     </>
     // Updating the navigation to match the req of Single Page Applications principle
     // npm i react-router-dom
