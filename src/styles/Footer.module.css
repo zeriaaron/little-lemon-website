@@ -1,12 +1,50 @@
+:root {
+    --padding-left-right: 10%;
+    --button-width: 30%;
+    --button-max-width: 15rem;
+    --button-height: 3rem;
+    --padding-top-bottom: 2%;
+    --margin-top-bottom: 2%;
+    --h1-h2-font-size: clamp(1.5rem, 1vw, 2.5rem);
+    --h3-font-size: clamp(1rem, 1vw, 2rem);
+    --p-h4-font-size: clamp(0.5rem, 1vw, 1.5rem);
+}
+
 .section {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: start;
+    background-color: #495E57;
+    padding-left: var(--padding-left-right);
+    padding-right: var(--padding-left-right);
+    height: 300px;
+    gap: 3%;
+}
+
+.section div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: start;
+    gap: 1%;
+    flex: 1;
+}
+
+.section div article > h3 {
+    font-size: var(--h3-font-size);
+    color: #F4CE14;
 }
 
 .section img {
     align-self: center;
+    width: 450px;
+    height: 100%;
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
+    flex: 1;
 }
 
 .section ul {
@@ -14,7 +52,40 @@
     padding: 0;
 }
 
+.section ul li {
+    margin-bottom: 10px;
+    font-size: var(--p-h4-font-size);
+}
+
 .section ul li a {
     text-decoration: none;
-    color: #333333;
+    color: white;
+}
+
+@media screen and (max-width: 992px) {
+    .section {
+        height: 200px;
+    }
+
+    .section img {
+        width: 350px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .section {
+        height: 300px;
+    }
+
+    .section img {
+        width: 250px;
+        object-position: 80%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .section img {
+        width: 175px;
+        object-position: 85%;
+    }
 }
