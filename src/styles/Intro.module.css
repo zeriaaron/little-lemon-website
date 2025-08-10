@@ -1,0 +1,88 @@
+.introSection {
+    background-color: #495E57;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+    padding-bottom: var(--padding-top-bottom);
+    padding-top: var(--padding-top-bottom);
+    padding-right: var(--padding-left-right);
+    padding-left: var(--padding-left-right);
+    color: white;
+}
+
+.introSection article > h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #F4CE14;
+    font-size: var(--h1-h2-font-size);
+    text-wrap: nowrap;
+}
+
+.introSection article > h3 {
+    margin-top: 0;
+    font-size: var(--h3-font-size);
+    text-wrap: wrap;
+}
+
+.introSection article > p {
+    text-wrap: wrap;
+    text-align: justify;
+    font-size: var(--p-font-size);
+}
+
+.introSection article > button {
+    background-color: #F4CE14;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0 3px 5px black;
+    width: 15rem;
+    height: 3rem;
+    font-size: var(--btn-font-size);
+}
+
+.introSection > img {
+    width: 600px;
+    height: 600px;
+    border-radius: 10px;
+}
+
+/* Tablets and below */
+@media screen and (max-width: 992px) {
+    .introSection > img {
+        width: 450px;
+        height: 450px;
+    }
+
+    .introSection article > button {
+        width: 15rem;
+        height: 3rem;
+    }
+}
+
+/* Mobiles and below */
+@media screen and (max-width: 768px) {
+    .introSection > img {
+        width: 375px;
+        height: 375px;
+    }
+
+    .introSection article > button {
+        width: 11.5rem;
+        height: 3rem;
+    }
+}
+
+/* Smaller Mobiles and below */
+@media screen and (max-width: 576px) {
+    .introSection > img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .introSection article > button {
+        width: 8.5rem;
+        height: 3rem;
+    }
+}

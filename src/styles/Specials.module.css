@@ -1,0 +1,107 @@
+.specialsSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10%;
+    padding-left: var(--padding-left-right);
+    padding-right: var(--padding-left-right);
+    padding-bottom: var(--padding-top-bottom);
+    padding-top: var(--padding-top-bottom);
+}
+
+.specialsDiv.category {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1%;
+}
+
+.specialsDiv.category > h2 { 
+    font-size: var(--h1-h2-font-size);
+}
+
+.specialsDiv.category > button {
+    background-color: #F4CE14;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0 3px 5px black;
+    width: var(--button-width);
+    max-width: var(--button-max-width);
+    height: var(--button-height);
+    font-size: var(--btn-font-size);
+}
+
+.specialsDiv.menu {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    column-gap: 2%;
+}
+
+.specialsDiv.menu article {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.specialsDiv.menu article div > h4 {
+    font-size: var(--p-h4-font-size);
+}
+
+.specialsDiv.menu article > p {
+    font-size: var(--p-h4-font-size);
+    text-align: justify;
+}
+
+.specialsDiv.menu article div:first-of-type {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.specialsDiv.menu article div:last-of-type {
+    margin-top: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2%;
+}
+
+.specialsDiv.menu article div:last-of-type > h4 {
+    margin: 0;
+}
+
+.specialsDiv.menu article > img {
+    max-width: 100%;
+    width: 100%;
+    height: 300px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    object-fit: cover;
+}
+
+/* Tablets and below */
+@media screen and (max-width: 992px) {
+    .specialsDiv.menu article > img {
+        height: 200px;
+    }
+}
+
+/* Mobiles and below */
+@media screen and (max-width: 768px) {
+    .specialsDiv.menu article > img {
+        height: 150px;
+    }
+}
+
+/* Smaller Mobiles and below */
+@media screen and (max-width: 576px) {
+    .specialsDiv.menu article > img {
+        height: 100px;   
+    }
+}
