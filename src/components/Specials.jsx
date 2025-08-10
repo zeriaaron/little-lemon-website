@@ -3,6 +3,7 @@ import specialsStyle from '../styles/Specials.module.css'
 import greekSalad from '../assets/images/specials/greek salad.jpg'
 import bruchetta from '../assets/images/specials/bruchetta.svg'
 import lemonDessert from '../assets/images/specials/lemon dessert.jpg'
+import motorcycle from '../assets/images/specials/motorcycle.png'
 
 const Specials = () => {
     return (
@@ -27,7 +28,7 @@ const Specials = () => {
                         </p>
                         <div>
                             <h4>Order a delivery</h4>
-                            <img src="1" alt="Motorcycle" />
+                            <img src={motorcycle} alt="Motorcycle" />
                         </div>
                     </article>
                     <article>
@@ -43,7 +44,7 @@ const Specials = () => {
                         </p>
                         <div>
                             <h4>Order a delivery</h4>
-                            <img src="1" alt="Motorcycle" />
+                            <img src={motorcycle} alt="Motorcycle" />
                         </div>
                     </article>
                     <article>
@@ -60,7 +61,7 @@ const Specials = () => {
                         </p>
                         <div>
                             <h4>Order a delivery</h4>
-                            <img src="1" alt="Motorcycle" />
+                            <img src={motorcycle} alt="Motorcycle" />
                         </div>
                     </article>
                 </div>
