@@ -40,11 +40,7 @@
     width: 15rem;
     height: 3rem;
     font-size: var(--btn-font-size);
-}
-
-.introSection article button > a {
-    text-decoration: none;
-    color: black;
+    cursor: pointer;
 }
 
 .introSection > img {
@@ -87,7 +83,7 @@
     }
 
     .introSection article > button {
-        width: 8.5rem;
+        width: 8rem;
         height: 3rem;
     }
 }
