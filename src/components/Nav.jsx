@@ -24,10 +24,9 @@ const Nav = () => {
             <ul className={classNames(navStyle.unorderedList)}>
                 <img className={classNames(navStyle.links)} src={logo} alt="Little Lemon Logo" />
                 <li><Link className={classNames(navStyle.links)} to={'/'}>Home</Link></li>
-                <li><Link className={classNames(navStyle.links)} to={'/book'}>Reserve a Table</Link></li>
                 <li><Link className={classNames(navStyle.links)} to={'/'}>About</Link></li>
                 <li><Link className={classNames(navStyle.links)} to={'/'}>Menu</Link></li>
-                <li><Link className={classNames(navStyle.links)} to={'/'}>Reservations</Link></li>
+                <li><Link className={classNames(navStyle.links)} to={'/book'}>Reservations</Link></li>
                 <li><Link className={classNames(navStyle.links)} to={'/'}>Order Online</Link></li>
                 <li><Link className={classNames(navStyle.links)} to={'/'}>Login</Link></li>
             </ul>
