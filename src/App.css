@@ -41,12 +41,14 @@
   color: #888;
 } */
 
-img {
+/* img {
   width: 100px;
   height: 100px;
-}
+} */
 
 body {
-  margin-left: 10%;
-  margin-right: 10%;
+  /* margin-left: 10%;
+  margin-right: 10%; */
+  margin: 0;
 }
+
