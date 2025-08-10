@@ -22,8 +22,9 @@ const Nav = () => {
         // Learned: Link has "a" anchor tag that you can target to work with styling
         <nav>
             <ul className={classNames(navStyle.unorderedList)}>
-                <img className={`${navStyle.img}`} src={logo} alt="Little Lemon Logo" />
-                <li><Link className={`${navStyle.links}`} to={'/'}>Home</Link></li>
+                <img className={classNames(navStyle.links)} src={logo} alt="Little Lemon Logo" />
+                <li><Link className={classNames(navStyle.links)} to={'/'}>Home</Link></li>
+                <li><Link className={classNames(navStyle.links)} to={'/book'}>Reserve a Table</Link></li>
                 <li><Link className={classNames(navStyle.links)} to={'/'}>About</Link></li>
                 <li><Link className={classNames(navStyle.links)} to={'/'}>Menu</Link></li>
                 <li><Link className={classNames(navStyle.links)} to={'/'}>Reservations</Link></li>
