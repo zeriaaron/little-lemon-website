@@ -1,48 +1,351 @@
-.introSection {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    column-gap: 100px;
+/*
+Learned:
+layout: use %
+font sizes: use rem
+images: use px (perfect pixel), then use @media (max-width: []) {} for responsive design
+
+%: relative to the parent container's size [responsive]
+rem: with root font-size adjusted via media queries for better scaling on mobile [not responsive enough: need media]
+clamp(min, preferred, max): can eliminate media query use
+
+preferred: responsive, 1.5vw -> 1.5% * eg. 1200px -> inside the min and max
+*/
+
+:root {
+    --padding-left-right: 10%;
+    --button-width: 100%;
+    --button-max-width: 30rem;
+    --button-height: 100%;
+    --padding-top-bottom: 2%;
+    --margin-top-bottom: 2%;
+    --h1-h2-font-size: clamp(2rem, 1.5vw, 3rem);
+    --h3-font-size: clamp(1rem, 1.5vw, 2rem);
+    --p-h4-font-size: clamp(0.5rem, 1.5vw, 1.5rem);
+    --btn-font-size: clamp(0.8rem, 1.5vw, 1.2rem);
 }
 
-.introSection article p {
+.introSection {
+    background-color: #495E57;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+    padding-bottom: var(--padding-top-bottom);
+    padding-top: var(--padding-top-bottom);
+    padding-right: var(--padding-left-right);
+    padding-left: var(--padding-left-right);
+    color: white;
+}
+
+.introSection article > h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #F4CE14;
+    font-size: var(--h1-h2-font-size);
+    text-wrap: nowrap;
+}
+
+.introSection article > h3 {
+    margin-top: 0;
+    font-size: var(--h3-font-size);
     text-wrap: wrap;
 }
 
-.specialsDiv {
+.introSection article > p {
+    text-wrap: wrap;
+    text-align: justify;
+    font-size: var(--p-font-size);
+}
+
+.introSection article > button {
+    background-color: #F4CE14;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0 3px 5px black;
+    width: 15rem;
+    height: 3rem;
+    font-size: var(--btn-font-size);
+}
+
+.introSection > img {
+    width: 600px;
+    height: 600px;
+    border-radius: 10px;
+}
+
+.specialsSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10%;
+    padding-left: var(--padding-left-right);
+    padding-right: var(--padding-left-right);
+    padding-bottom: var(--padding-top-bottom);
+    padding-top: var(--padding-top-bottom);
+}
+
+.specialsDiv.category {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1%;
+}
+
+.specialsDiv.category > h2 { 
+    font-size: var(--h1-h2-font-size);
+}
+
+.specialsDiv.category > button {
+    background-color: #F4CE14;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0 3px 5px black;
+    width: var(--button-width);
+    max-width: var(--button-max-width);
+    height: var(--button-height);
+    font-size: var(--btn-font-size);
+}
+
+.specialsDiv.menu {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    column-gap: 2%;
+}
+
+.specialsDiv.menu article {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.specialsDiv.menu article div > h4 {
+    font-size: var(--p-h4-font-size);
+}
+
+.specialsDiv.menu article > p {
+    font-size: var(--p-h4-font-size);
+    text-align: justify;
+}
+
+.specialsDiv.menu article div:first-of-type {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
 
-.specialsSection {
+.specialsDiv.menu article div:last-of-type {
+    margin-top: auto;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-items: center;
-    gap: 50px;
+    gap: 2%;
+}
+
+.specialsDiv.menu article div:last-of-type > h4 {
+    margin: 0;
+}
+
+.specialsDiv.menu article > img {
+    max-width: 100%;
+    width: 100%;
+    height: 300px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    object-fit: cover;
 }
 
 .testimonialsSection {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: space-evenly;
+    background-color: #EE9972;
+    margin-bottom: var(--margin-top-bottom);
+}
+
+.testimonialsSection > h1 {
+    text-align: center;
+    font-size: var(--h1-h2-font-size);
+    color: black;
 }
 
 .testimonialsDiv {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
+    padding-left: var(--padding-left-right);
+    padding-right: var(--padding-left-right);
+    gap: 2%;
+}
+
+.testimonialsDiv > article {
+    flex: 1;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.testimonialsDiv article > h3 {
+    font-size: var(--h3-font-size);
+    color: white;
+}
+
+.testimonialsDiv article > p {
+    font-size: var(--p-font-size);
+    text-align: justify;
+    color: white;
+}
+
+.testimonialsDiv article div > img {
+    max-width: 100px;
+    width: 100px;
+    height: 100px;
+}
+
+.testimonialsDiv article > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
 }
 
 .outroSection {
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    column-gap: 100px;
+    column-gap: 5%;
+    padding-left: var(--padding-left-right);
+    padding-right: var(--padding-left-right);
+    margin-bottom: var(--margin-top-bottom);
+}
+
+.outroSection article {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.outroSection img {
+    width: 500px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.outroSection article > h2 {
+    font-size: var(--h1-h2-font-size);
+    margin-bottom: 0;
+    color: #F4CE14;
+}
+
+.outroSection article > h3 {
+    font-size: var(--h3-font-size);
+    color: #333333;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.outroSection article > p {
+    font-size: var(--p-font-size);
+    text-align: justify;
+}
+
+/* Media Responsiveness */
+/* 
+xs: <576px
+sm: ≥576px
+md: ≥768px
+lg: ≥992px
+xl: ≥1200px
+*/
+
+/* Tablets and below */
+@media screen and (max-width: 992px) {
+    .introSection > img {
+        width: 450px;
+        height: 450px;
+    }
+
+    .introSection article > button {
+        width: 15rem;
+        height: 3rem;
+    }
+
+    .specialsDiv.menu article > img {
+        height: 200px;
+    }
+
+    .testimonialsDiv article div > img {
+        width: 65px;
+        height: 65px;
+    }
+
+    .outroSection img {
+        width: 400px;
+        height: 250px;
+    }
+}
+
+/* Mobiles and below */
+@media screen and (max-width: 768px) {
+    .introSection > img {
+        width: 375px;
+        height: 375px;
+    }
+
+    .introSection article > button {
+        width: 11.5rem;
+        height: 3rem;
+    }
+
+    .specialsDiv.menu article > img {
+        height: 150px;
+    }
+
+    .testimonialsDiv article div > img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .outroSection img {
+        width: 350px;
+        height: 300px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .introSection > img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .introSection article > button {
+        width: 8.5rem;
+        height: 3rem;
+    }
+
+    .specialsDiv.menu article > img {
+        height: 100px;   
+    }
+
+    .testimonialsDiv article div > img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .outroSection img {
+        width: 300px;
+        height: 300px;
+    }
 }
