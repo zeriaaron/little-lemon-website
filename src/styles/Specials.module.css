@@ -27,6 +27,7 @@
     max-width: var(--button-max-width);
     height: var(--button-height);
     font-size: var(--btn-font-size);
+    cursor: pointer;
 }
 
 .specialsDiv.menu {
