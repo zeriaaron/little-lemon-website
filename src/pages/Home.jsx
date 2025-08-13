@@ -6,7 +6,7 @@ import Outro from '../components/Outro'
 import Footer from '../components/Footer'
 
 
-const Main = () => {
+const Home = () => {
     return (
         <main>
             <Header />
@@ -19,4 +19,4 @@ const Main = () => {
     )
 }
 
-export default Main
+export default Home

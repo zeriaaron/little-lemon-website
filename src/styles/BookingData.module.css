@@ -1,0 +1,28 @@
+.table {
+    background-color: antiquewhite;
+    border-collapse: collapse;
+    margin: 20px 0;
+    height: 4vh;
+    text-align: center;
+}
+
+.table tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+.table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.table td, .table th {
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+    height: 2vh;
+}
+
+.table tr:first-child {
+    background-color: var(--green);
+    color: white;
+    font-weight: bold;
+}
+

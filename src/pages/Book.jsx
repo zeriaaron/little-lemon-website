@@ -1,9 +1,24 @@
+import { useReducer } from 'react'
+import classNames from 'classnames'
 import BookingForm from '../components/BookingForm'
+import BookingData from '../components/BookingData'
+import { updateTimes, initializeTimes } from '../components/timesReducer'
+import bookStyle from '../styles/Book.module.css'
+import { submitAPI } from '../../api'
 
 const Book = () => {
+    const [state, dispatch] = useReducer(updateTimes, {}, initializeTimes)
+
+    const submitForm = (formData) => {
+        return submitAPI(formData)
+    }
+
     return (
         <>
-            <BookingForm />
+            <div className={classNames(bookStyle.div)}>
+                <BookingForm state={state} dispatch={dispatch} submitForm={submitForm}  />
+                <BookingData data={state.bookingInfo} />
+            </div>
         </>
     )
 }

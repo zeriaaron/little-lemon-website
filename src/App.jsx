@@ -1,6 +1,7 @@
 import './App.css'
 import Home from './pages/Home'
 import Book from './pages/Book'
+import ConfirmedBookingPage from './pages/ConfirmedBookingPage'
 import { Routes, Route } from 'react-router-dom'
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/book' element={<Book/>}/>
+        <Route path='/confirmation' element={<ConfirmedBookingPage/>}/>
       </Routes>
     </>
     // Updating the navigation to match the req of Single Page Applications principle
