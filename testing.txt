@@ -1,0 +1,96 @@
+React Testing Library
+Jest
+
+Best practices
+Avoid including implementation details
+Work with DOM nodes
+Resemble software usage
+Maintainability
+
+
+Jest
+-> JavaScript test runner
+-> provides access to jsdom [virtual]
+-> Good iteration speed
+-> Powerful features
+    -> Mocking
+
+React Testing Library
+-> Set of utilities
+-> Fulfills testing best practices
+
+But since we are using Vite, we use vitest
+
+1. Install
+npm install --save-dev vitest @testing-library/react @testing-library/jest-dom @testing-library/user-event jsdom
+
+vitest — test runner optimized for Vite
+
+@testing-library/react — React Testing Library
+
+@testing-library/jest-dom — nice DOM assertions
+
+@testing-library/user-event — better user event simulation (optional but recommended)
+
+jsdom — DOM environment for tests
+
+2. Add/Add content
+vite.config.js
+/// <reference types="vitest" />
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+
+export default defineConfig({
+  plugins: [react()],
+  test: {
+    globals: true,            // So you can use 'test', 'expect' without imports
+    environment: 'jsdom',     // Simulates browser environment
+    setupFiles: './src/setupTests.ts', // Setup file path for jest-dom etc.
+    coverage: {
+      reporter: ['text', 'json', 'html'],  // Optional: coverage reports
+    },
+  },
+});
+
+
+jsconfig.json
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "jsx": "react-jsx",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "types": ["vite/client", "vitest/globals"]
+  },
+  "include": ["src"]
+}
+
+
+src/setupTests.js
+import '@testing-library/jest-dom'
+
+
+package.json
+{
+  "scripts": {
+    "test": "vitest",
+    "test:watch": "vitest --watch"
+  }
+}
+
+3. Run
+npm test
+npx vitest
+
+4. In using JavaScript as template in Vite, jsconfig.json cannot actually
+make the test, expect global so you need to import it manually inside components
+
+
+
