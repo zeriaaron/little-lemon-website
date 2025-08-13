@@ -1,52 +1,65 @@
-import bookStyle from '../styles/Book.module.css'
+import bookingPageStyle from '../styles/BookingForm.module.css'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import classNames from 'classnames'
+import { isObjEqual } from './equalComparator'
 
-const BookingForm = () => {
-    const [availableTimes, setAvailableTimes] = useState([
-        '17:00',
-        '18:00',
-        '19:00',
-        '20:00',
-        '21:00',
-        '22:00',
-    ])
-    const [date, setDate] = useState('')
-    const [time, setTime] = useState(availableTimes[0] || "")
+const BookingForm = ({ state, dispatch, submitForm }) => {
+    const today = new Date().toISOString().split('T')[0]
+    const [date, setDate] = useState(today)
+    const [time, setTime] = useState(state.availableTimes[0] || '')
     const [guests, setGuests] = useState('1')
-    const [occasion, setOccasion] = useState('Birthday')
+    const [occasion, setOccasion] = useState('birthday')
     const navigate = useNavigate()
 
     const submitHandler = (e) => {
         e.preventDefault()
 
-        console.log(date)
-        console.log(time)
-        console.log(guests)
-        console.log(occasion)
+        const payload = {date, time, guests, occasion}
 
-        setDate('')
-        setAvailableTimes([])
-        setGuests('1')
-        setOccasion('Birthday')
-        navigate('/')
+        const isDuplicate = state.bookingInfo.some(obj => isObjEqual(obj, payload))
+
+        if (isDuplicate) {
+            alert('Reservation already existing!')
+            return
+        }
+
+        const response = submitForm(payload)
+
+        if (response) {
+            dispatch({type: 'submit', payload})
+            navigate('/confirmation')
+
+            setDate(today)
+            setTime(state.availableTimes[0])
+            setGuests('1')
+            setOccasion('birthday')
+        }
+
+        // create if statements for validation before requesting
+        // you can do fetch POST
     }
 
-    const verify = (date && time && guests && occasion) ? true : false;
+    const handleDateChange = (e) => {
+        const selectedDate = e.target.value
+        setDate(selectedDate)
+        dispatch({ type: 'update', date: selectedDate})
+    }
+
+    const valid = (date && time && guests && occasion) ? true : false;
 
     return (
         <>
             <main>
-                <form onSubmit={submitHandler} className={bookStyle.form}>
-                    <fieldset className={classNames(bookStyle.fieldset)}>
+                <form onSubmit={submitHandler} className={bookingPageStyle.form}>
+                    <fieldset className={classNames(bookingPageStyle.fieldset)}>
                         <h1>Reserve a Table</h1>
                         <label htmlFor="date">Choose date</label>
-                        <input type="date" id="date" value={date} onChange={e => setDate(e.target.value)} />
+                        <input type="date" id="date" value={date} onChange={handleDateChange} />
                         <label htmlFor="time">Choose time</label>
                         <select name="time" id="time" value={time} onChange={e => setTime(e.target.value)}>
                             {
-                                availableTimes.map(
+                                state.availableTimes.map(
                                     time => (
                                         <option key={time} value={time}>{time}</option>
                                     )
@@ -60,7 +73,7 @@ const BookingForm = () => {
                             <option value="birthday">Birthday</option>
                             <option value="anniversary">Anniversary</option>
                         </select>
-                        <button disabled={!verify} type="submit">Submit</button>
+                        <button disabled={!valid} type="submit">Submit</button>
                     </fieldset>
                 </form>
             </main>
