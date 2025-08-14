@@ -1,8 +1,9 @@
-/* .form {
-    padding-top: 2rem;
-    background-color: var(--orange);
-    min-height: 100vh;
-} */
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
 
 .fieldset {
     display: flex;
@@ -29,10 +30,6 @@
     color: white;
 }
 
-.fieldset label:last-of-type + select {
-    margin-bottom: 1rem;
-}
-
 .fieldset input, .fieldset select {
     height: 2rem;
     font-size: clamp(0.9rem, 1.5vw, 1rem);
@@ -55,6 +52,7 @@
     box-shadow: 0 2px 3px black;
     font-size: clamp(1.1rem, 1.5vw, 1.2rem);
     cursor: pointer;
+    margin-top: 1rem;
 }
 
 @media screen and (max-width: 992px) {

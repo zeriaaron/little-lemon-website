@@ -6,28 +6,35 @@ import { isObjEqual } from './equalComparator'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { useDispatch } from 'react-redux'
+import { addBooking } from '../store/store'
 
 const BookingFormZod = ({ state, dispatch, submitForm }) => {
     const today = new Date().toISOString().split('T')[0]
+    const dispatchRedux = useDispatch()
     const navigate = useNavigate()
 
     const schema = z.object({
-        date: z.string().transform(val => new Date(val)).refine(val => val >= new Date(today), 'Date must be today or later'),
-        time: z.string(),
+        date: z.string()
+        .nonempty('Date is required')
+        .transform(val => new Date(val))
+        .refine(val => val >= new Date(today), 'Date must be today or later'),
+        time: z.string().nonempty('Time is required'),
         guests: z.string()
+        .nonempty('Number of guests is required')
         .transform(val => Number(val))
         .refine(val => val >= 1, 'At least 1 guest')
         .refine(val => val <= 10, 'Max 10 guests'),
-        occasion: z.string()
+        occasion: z.string().nonempty('Occasion is required')
     })
 
     const { register, handleSubmit, formState: { errors }, watch, reset } = useForm({
         mode: 'onChange',
         defaultValues: {
             date: '',
-            time: state.availableTimes[0],
-            guests: '1',
-            occasion: 'birthday'
+            time: '',
+            guests: '',
+            occasion: ''
         },
         resolver: zodResolver(schema)
     })
@@ -55,13 +62,14 @@ const BookingFormZod = ({ state, dispatch, submitForm }) => {
 
         if (response) {
             dispatch({type: 'submit', payload})
+            dispatchRedux(addBooking(payload))
             reset()
             navigate('/confirmation')
         }
 
         // create if statements for validation before requesting
         // you can do fetch POST
-    };
+    }
 
     return (
         <>
@@ -71,7 +79,7 @@ const BookingFormZod = ({ state, dispatch, submitForm }) => {
                         <h1>Reserve a Table</h1>
                         <label htmlFor="date">Choose date</label>
                         <input type="date" id="date" {...register('date')} />
-                        { errors.date && <p className={classNames(bookingFormStyle.error)}>{errors.date.message}</p> }
+                        { errors.date && <p data-testid='date-error' className={classNames(bookingFormStyle.error)}>{errors.date.message}</p> }
 
                         <label htmlFor="time">Choose time</label>
                         <select name="time" id="time" {...register('time')}>
@@ -83,18 +91,18 @@ const BookingFormZod = ({ state, dispatch, submitForm }) => {
                                 )
                             }
                         </select>
-                        { errors.time && <p className={classNames(bookingFormStyle.error)}>{errors.time.message}</p> }
+                        { errors.time && <p data-testid='time-error' className={classNames(bookingFormStyle.error)}>{errors.time.message}</p> }
 
                         <label htmlFor="guests">Number of guests</label>
                         <input type="number" id="guests" placeholder="1" {...register('guests')}/>
-                        { errors.guests && <p className={classNames(bookingFormStyle.error)}>{errors.guests.message}</p> }
+                        { errors.guests && <p data-testid='guests-error' className={classNames(bookingFormStyle.error)}>{errors.guests.message}</p> }
 
                         <label htmlFor="occasion">Choose occasion</label>
                         <select name="occasion" id="occasion" {...register('occasion')}>
                             <option value="birthday">Birthday</option>
                             <option value="anniversary">Anniversary</option>
                         </select>
-                        { errors.occasion && <p className={classNames(bookingFormStyle.error)}>{errors.occasion.message}</p> }
+                        { errors.occasion && <p data-testid='occasion-error' className={classNames(bookingFormStyle.error)}>{errors.occasion.message}</p> }
 
                         <button type="submit">Submit</button>
                     </fieldset>

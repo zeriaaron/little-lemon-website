@@ -1,7 +1,12 @@
+import BookingData from "../components/BookingData"
+import { useSelector } from "react-redux"
+
 const ConfirmedBookingPage = () => {
+    const booking = useSelector((state) => state.booking.bookingInfo)
+
     return (
         <>
-            <h1>Reservation has successfully submitted!</h1>
+            <BookingData booking={booking} />
         </>
     )
 }

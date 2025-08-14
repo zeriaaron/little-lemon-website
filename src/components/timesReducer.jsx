@@ -15,8 +15,6 @@ export function updateTimes(state, action) {
   const dateObject = new Date(action.payload.date)
   const newAvailableTimes = fetchAPI(dateObject)
 
-  console.log(newAvailableTimes)
-
   switch (action.type) {
     case 'submit':
       return {...state, bookingInfo: [...state.bookingInfo, action.payload], submitted: true}

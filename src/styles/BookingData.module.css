@@ -1,3 +1,12 @@
+.div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--orange);
+}
+
 .table {
     background-color: antiquewhite;
     border-collapse: collapse;
@@ -26,3 +35,13 @@
     font-weight: bold;
 }
 
+.button {
+    width: 15rem;
+    height: 2.5rem;
+    background-color: #F4CE14;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 3px black;
+    font-size: clamp(1.1rem, 1.5vw, 1.2rem);
+    cursor: pointer;
+}
