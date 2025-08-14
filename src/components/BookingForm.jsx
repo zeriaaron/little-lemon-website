@@ -5,8 +5,8 @@ import classNames from 'classnames'
 import { isObjEqual } from './equalComparator'
 
 const BookingForm = ({ state, dispatch, submitForm }) => {
-    const today = new Date().toISOString().split('T')[0]
-    const [date, setDate] = useState(today)
+    // const today = new Date().toISOString().split('T')[0]
+    const [date, setDate] = useState('')
     const [time, setTime] = useState(state.availableTimes[0] || '')
     const [guests, setGuests] = useState('1')
     const [occasion, setOccasion] = useState('birthday')
@@ -30,7 +30,7 @@ const BookingForm = ({ state, dispatch, submitForm }) => {
             dispatch({type: 'submit', payload})
             navigate('/confirmation')
 
-            setDate(today)
+            setDate('')
             setTime(state.availableTimes[0])
             setGuests('1')
             setOccasion('birthday')
@@ -43,7 +43,7 @@ const BookingForm = ({ state, dispatch, submitForm }) => {
     const handleDateChange = (e) => {
         const selectedDate = e.target.value
         setDate(selectedDate)
-        dispatch({ type: 'update', date: selectedDate})
+        dispatch({ type: 'update', payload: { date: selectedDate }})
     }
 
     const valid = (date && time && guests && occasion) ? true : false;
