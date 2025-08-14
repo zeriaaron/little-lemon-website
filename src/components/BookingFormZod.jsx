@@ -104,7 +104,7 @@ const BookingFormZod = ({ state, dispatch, submitForm }) => {
                         </select>
                         { errors.occasion && <p data-testid='occasion-error' className={classNames(bookingFormStyle.error)}>{errors.occasion.message}</p> }
 
-                        <button type="submit">Submit</button>
+                        <button type="submit" aria-label='Submit Form'>Submit</button>
                     </fieldset>
                 </form>
             </main>

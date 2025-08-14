@@ -23,12 +23,12 @@ const Nav = () => {
         <nav>
             <ul className={classNames(navStyle.unorderedList)}>
                 <img className={classNames(navStyle.links)} src={logo} alt="Little Lemon Logo" />
-                <li><Link className={classNames(navStyle.links)} to={'/'}>Home</Link></li>
-                <li><Link className={classNames(navStyle.links)} to={'/'}>About</Link></li>
-                <li><Link className={classNames(navStyle.links)} to={'/'}>Menu</Link></li>
-                <li><Link className={classNames(navStyle.links)} to={'/book'}>Reservations</Link></li>
-                <li><Link className={classNames(navStyle.links)} to={'/'}>Order Online</Link></li>
-                <li><Link className={classNames(navStyle.links)} to={'/'}>Login</Link></li>
+                <li><Link className={classNames(navStyle.links)} to={'/'} aria-label='Go to home page'>Home</Link></li>
+                <li><Link className={classNames(navStyle.links)} to={'/'} aria-label='Go to about page'>About</Link></li>
+                <li><Link className={classNames(navStyle.links)} to={'/'} aria-label='Go to menu page'>Menu</Link></li>
+                <li><Link className={classNames(navStyle.links)} to={'/book'} aria-label='Go to reservations page'>Reservations</Link></li>
+                <li><Link className={classNames(navStyle.links)} to={'/'} aria-label='Go to order online page'>Order Online</Link></li>
+                <li><Link className={classNames(navStyle.links)} to={'/'} aria-label='Go to login page'>Login</Link></li>
             </ul>
         </nav>
     )
