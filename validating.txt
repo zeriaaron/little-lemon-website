@@ -1,0 +1,16 @@
+In this code, I will use React Hook Form + Zod for form validation
+
+According to ChatGPT:
+Formik -> for small forms because as it gets bigger, the webpage gets slower because of multiple re-renders
+-> as we know if we use useState, values get controlled by React itself and therefore cause re-renders
+
+React Hook Form -> for large forms and for its simplicity
+-> reat hook form is like the useRef but with superpowers
+-> it is uncontrolled because the DOM controls the value, but
+-> there is a function in hook form that gets attached to the input
+-> and then store states internally
+
+and we can also use Yup or Zod for schema validation, in this case, I'm going to use Zod
+
+1. Install
+npm i react-hook-form @hookform/resolvers zod
