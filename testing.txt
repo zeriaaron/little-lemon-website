@@ -2,10 +2,10 @@ React Testing Library
 Jest
 
 Best practices
-Avoid including implementation details
-Work with DOM nodes
-Resemble software usage
-Maintainability
+1. Avoid including implementation details
+2. Work with DOM nodes
+3. Resemble software usage
+4. Maintainability
 
 
 Jest
@@ -90,7 +90,7 @@ npm test
 npx vitest
 
 4. In using JavaScript as template in Vite, jsconfig.json cannot actually
-make the test, expect global so you need to import it manually inside components
+make the 'test' and 'expect' global so you need to import it manually inside components
 
 
 
