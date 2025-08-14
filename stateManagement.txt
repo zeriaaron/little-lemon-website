@@ -1,0 +1,16 @@
+Goal of managing and sharing state across components
+
+I was taught to use ContextAPI, but I'm going to use Redux for sharing
+or providing an API for states to be used by many components
+
+I need to use the state from the Book.jsx and use it in BookingData and ConfirmedBookingPage
+
+1. Install
+npm i @reduxjs/toolkit react-reduxjs
+
+2. Create a store folder and a store.jsx or store.js
+stateSlice
+export { updateState, resetState } = state.actions
+export store
+
+3. Use Redux state in components
