@@ -4,7 +4,7 @@ import BookingForm from '../components/BookingForm'
 import BookingFormFormik from '../components/BookingFormFormik'
 import BookingFormZod from '../components/BookingFormZod'
 import BookingData from '../components/BookingData'
-import { updateTimes, initializeTimes } from '../components/timesReducer'
+import { updateTimes, initializeTimes } from '../functions/timesReducer'
 import bookStyle from '../styles/Book.module.css'
 import { submitAPI } from '../../api'
 

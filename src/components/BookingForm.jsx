@@ -2,7 +2,7 @@ import bookingPageStyle from '../styles/BookingForm.module.css'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import classNames from 'classnames'
-import { isObjEqual } from './equalComparator'
+import { isObjEqual } from '../functions/equalComparator'
 
 const BookingForm = ({ state, dispatch, submitForm }) => {
     // const today = new Date().toISOString().split('T')[0]

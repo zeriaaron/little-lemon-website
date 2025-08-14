@@ -2,7 +2,7 @@ import bookingFormStyle from '../styles/BookingForm.module.css'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import classNames from 'classnames'
-import { isObjEqual } from './equalComparator'
+import { isObjEqual } from '../functions/equalComparator'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 

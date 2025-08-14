@@ -1,4 +1,4 @@
-import { initializeTimes, updateTimes } from "../components/timesReducer";
+import { initializeTimes, updateTimes } from "../functions/timesReducer";
 import { test, expect } from "vitest";
 import { fetchAPI } from "../../api";
 
