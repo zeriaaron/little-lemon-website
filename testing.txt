@@ -93,4 +93,9 @@ npx vitest
 make the 'test' and 'expect' global so you need to import it manually inside components
 
 
+Notes:
+1. getBy -> expect the element to exist
+2. queryBy -> might not exist: returns null
+3. findBy -> [promise] async elements that appear after some delay
+
 
