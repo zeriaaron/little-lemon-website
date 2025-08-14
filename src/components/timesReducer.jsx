@@ -12,8 +12,10 @@ export function initializeTimes() {
 }
 
 export function updateTimes(state, action) {
-  const dateObject = new Date(action.date)
+  const dateObject = new Date(action.payload.date)
   const newAvailableTimes = fetchAPI(dateObject)
+
+  console.log(newAvailableTimes)
 
   switch (action.type) {
     case 'submit':
