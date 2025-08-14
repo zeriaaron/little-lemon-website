@@ -12,5 +12,11 @@ React Hook Form -> for large forms and for its simplicity
 
 and we can also use Yup or Zod for schema validation, in this case, I'm going to use Zod
 
+Change of plans:
+I will create two versions
+1. Using useState, useReducer, and Formik + Yup
+2. Using useForm and Zod
+
 1. Install
 npm i react-hook-form @hookform/resolvers zod
+npm i formik yup
