@@ -19,7 +19,6 @@ function App() {
     // import Browser Router from react-router-dom [main.jsx]
     // import Routes, Route from react-router-dom [here]
     // use Link instead of li [Nav.jsx]
-    // Learned: Put Routes in betwen the Header and Footer to do "like" a conditional rendering components
   )
 }
 
