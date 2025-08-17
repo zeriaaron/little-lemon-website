@@ -44,10 +44,20 @@
 - Open Graph Protocol
 
 ## Forms and Form Validation
-- React Hook Form
+- React Hook Form: useForm
 - Yup
 - Zod
 - Formik
+
+## React Hooks
+- useState
+- useReducer
+- useEffect
+
+## State Management Library
+- ContextAPI
+- Redux
+- Redux Toolkit
   
 ## Routing Configuration
 - Routes
