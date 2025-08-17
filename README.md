@@ -48,13 +48,15 @@
 - Yup
 - Zod
 - Formik
+- Controlled Component
+- Uncontrolled Component
 
 ## React Hooks
 - useState
 - useReducer
 - useEffect
 
-## State Management Library
+## State Management LIbrary
 - ContextAPI
 - Redux
 - Redux Toolkit
