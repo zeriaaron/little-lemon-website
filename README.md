@@ -1,3 +1,71 @@
+# Applied Knowledge and Skills
+## Software Development Life Cycle (SDLC)
+- Planning
+- Requirement Analysis
+- Design
+- Development
+- Testing
+- Deployment
+- Maintenance
+
+## React
+- HTML5
+- CSS
+- JavaScript
+- JSX
+
+## Layouts
+- Flexbox
+- Grid
+  
+## Media Queries
+- Mobile: 576px
+- Tablet: 768px
+- Desktop: 992px
+
+## UX/UI Design
+- Figma
+- Wireframes
+- Mockups
+- High fidelity prototypes
+  
+## Accessibility Tools and Standards
+- ARIA
+- WCAG
+- WAI
+- W3C
+  
+## Heursitic Principles
+- Nielsen's 10 heuristics
+
+## Search Engine Optimization
+- Semantic tags
+- Metadata tags
+- Open Graph Protocol
+
+## Forms and Form Validation
+- React Hook Form
+- Yup
+- Zod
+- Formik
+  
+## Routing Configuration
+- Routes
+- Route
+- Link
+- useNavigate
+- BrowserRouter
+  
+## React Testing Library
+- Vitest
+- Jest
+  
+## Distributed Version Control
+- Git
+  
+## Centralized Remote Repository
+- GitHub
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
